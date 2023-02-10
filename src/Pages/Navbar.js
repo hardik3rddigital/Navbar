@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="container">
           <div className="headeritems d-flex justify-content-between align-items-center">
             <div className="header_logo">
-              <NavLink activeClassName="is-active" to="./">
+              <NavLink activeClassName="is-active" to="/">
                 <img
                   src="https://3rddigital.com/img/logo_gray.png"
                   alt="Header Logo"
@@ -32,23 +32,29 @@ const Navbar = () => {
               <nav>
                 <ul className="d-flex align-items-center navbar-nav flex-row">
                   <li className="nav-item px-2">
-                    <NavLink activeClassName="nav-link active" to="./About">
+                    <NavLink activeClassName="nav-link active" to="/About">
                       About
                     </NavLink>
                   </li>
                   <li className="nav-item px-2">
-                    <NavLink activeClassName="nav-link active" to="./Service">
+                    <NavLink activeClassName="nav-link active" to="/Service">
                       Service
                     </NavLink>
                   </li>
                   <li className="nav-item px-2">
-                    <NavLink activeClassName="nav-link active" to="./Contact">
+                    <NavLink activeClassName="nav-link active" to="/Contact">
                       Contact
                     </NavLink>
                   </li>
                   <li className="nav-item px-2">
-                    <NavLink activeClassName="nav-link active" to="./Careers">
+                    <NavLink activeClassName="nav-link active" to="/Careers">
                     Careers
+                    </NavLink>
+                    
+                  </li>
+                  <li className="nav-item px-2">
+                    <NavLink activeClassName="nav-link active" to="/Team/Hardik">
+                    Team
                     </NavLink>
                     
                   </li>
@@ -65,11 +71,11 @@ const Navbar = () => {
         <Route exact path="/About" component={()=><About name="About"/>} />
         <Route exact path="/Service" component={()=><Service name="Service"/>} />
         <Route exact path="/Blog" component={()=><Blog name="Blog"/>} />
-        <Route exact path="/Careers" component={()=><Careers name="Careers"/>} />
-        <Route exact path="/Team" component={()=><Team name="Team"/>} />
+        <Route path="/Careers" component={()=><Careers name="Careers"/>} />
+        <Route path="/Team/:employee" component={()=><Team name="Team"/>} />
         <Route exact path="/Portfolio" component={()=><Portfolio name="Portfolio"/>} />
         <Route exact path="/Testimonials" component={()=><Testimonials name="Testimonials"/>} />
-        <Route exact path="/Contact" component={()=><Home name="Contact"/>} />
+        <Route exact path="/Contact" component={()=><Contact name="Contact"/>} />
         <Route component={Error} />
       </Switch>
     </>

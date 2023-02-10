@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Route, Switch, NavLink, Redirect } from "react-router-dom";
 
 import About from "./About";
 import Service from "./Service";
@@ -77,6 +77,7 @@ const Navbar = () => {
         <Route exact path="/Testimonials" component={()=><Testimonials name="Testimonials"/>} />
         <Route exact path="/Contact" component={()=><Contact name="Contact"/>} />
         <Route component={Error} />
+        <Redirect to='/' />
       </Switch>
     </>
   );

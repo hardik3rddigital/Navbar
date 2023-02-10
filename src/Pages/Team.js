@@ -5,7 +5,7 @@ const Team = (props) => {
   const {employee} = useParams();
   const location = useLocation();
   const history = useHistory();
-  console.log(history.location.pathname);
+  console.log(history);
 
   return (
     <>
@@ -15,8 +15,9 @@ const Team = (props) => {
             <h1 className="text-white">This is a {props.name} Page</h1>
             <p className="text-white">Hello {employee}</p>
             <p className="text-white">Directory : {location.pathname}</p>
+            <p className="text-white">History Directory : {history.location.pathname}</p>
             <button className="btn btn-light" onClick={()=> {history.goBack()}}>Go Back</button>
-            <button className="btn btn-light m-3" onClick={()=> {history.push('/')}}>Home Page</button>
+            <button className="btn btn-light mx-3" onClick={()=> {history.push('/')}}>Home Page</button>
           </div>
         </div>
       </div>

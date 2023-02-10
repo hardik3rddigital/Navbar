@@ -1,10 +1,11 @@
 import React from "react";
-import { useParams,useLocation } from "react-router-dom";
+import { useParams,useLocation,useHistory } from "react-router-dom";
 
 const Team = (props) => {
   const {employee} = useParams();
   const location = useLocation();
-  //console.log(location.pathname);
+  const history = useHistory();
+  console.log(history.location.pathname);
 
   return (
     <>
@@ -14,7 +15,8 @@ const Team = (props) => {
             <h1 className="text-white">This is a {props.name} Page</h1>
             <p className="text-white">Hello {employee}</p>
             <p className="text-white">Directory : {location.pathname}</p>
-            
+            <button className="btn btn-light" onClick={()=> {history.goBack()}}>Go Back</button>
+            <button className="btn btn-light m-3" onClick={()=> {history.push('/')}}>Home Page</button>
           </div>
         </div>
       </div>
